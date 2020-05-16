@@ -1,0 +1,315 @@
+/* 
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto&display=swap');
+
+body {
+  background: #141414;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.postbody {
+  width: 796.88px;
+  margin: 25px auto 0;
+}
+
+/* CONTAINER */
+
+.container {
+  box-sizing: border-box;
+  width: 700px;
+  height: 500px;
+  background: #161616;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+/* INFO */
+
+.container > .info {
+  width: 700px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGE */
+
+.container > .info .trainer {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(
+      to bottom,
+      rgba(14, 14, 14, 0.9),
+      rgba(14, 14, 14, 0.9)
+    ),
+    url('./img/azula.jpg');
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(100%);
+}
+
+/* DESCRIPTION */
+
+.container > .info .description {
+  width: 284px;
+  height: 304px;
+  padding: 0 20px;
+  background: #0f0f0f;
+  border-top: 20px solid #0f0f0f;
+  border-bottom: 20px solid #0f0f0f;
+  border-right: 20px solid #0f0f0f;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 11px;
+  color: #bfbfbf;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .info .description::-webkit-scrollbar,
+.glosario-descs .desc .text::-webkit-scrollbar {
+  width: 5px;
+}
+
+.container > .info .description::-webkit-scrollbar-thumb,
+.glosario-descs .desc .text::-webkit-scrollbar-thumb {
+  background: #161616;
+}
+
+.container > .info .description::-webkit-scrollbar-track,
+.glosario-descs .desc .text::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+/* TEAM CONTAINER */
+
+.container > .info .team {
+  width: 304px;
+  height: 304px;
+  background: #131313;
+  border: 20px solid #161616;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.25s;
+}
+
+/* POKEMON LISTED IN TEAM */
+
+.container > .info .team > .pkmn {
+  background: rgba(255, 255, 255, 0.05);
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .info .team > .pkmn::after {
+  content: '';
+  background: rgba(14, 14, 14, 0.75);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .info .team > .pkmn.active::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container > .info .team > .pkmn > .img {
+  position: relative;
+}
+
+.container > .info .team > .pkmn:hover:after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* FOOTER */
+
+.container > .footer {
+  background: #0f0f0f;
+  height: 100px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: 450px 250px;
+}
+
+/* NAME */
+
+.container > .footer > .name {
+  background: #0f0f0f;
+  line-height: 100px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+/* SHOW TEAM BUTTON */
+
+.container > .footer > .menu {
+  padding: 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container > .footer > .menu > .item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  background: #161616;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .footer > .menu > .item:hover {
+  background: #131313;
+}
+
+.container > .footer > .menu > .item.selected {
+  color: #404040;
+  cursor: crosshair;
+}
+
+.container > .footer > .menu > .item.selected:hover {
+  background: #161616;
+}
+
+/* CURRENT POKÉMON */
+
+.container > .info > .current {
+  background: #131313;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: -300px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .info > .current.active {
+  left: 0;
+}
+
+/* CURRENT NAME */
+
+.container > .info > .current > .name {
+  width: 250px;
+  height: 60px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: center;
+  line-height: 60px;
+  background: #0f0f0f;
+}
+
+/* CURRENT CLOSE */
+.container > .info > .current > .close {
+  width: 60px;
+  height: 60px;
+  background: #0f0f0f;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-left: 1px solid #161616;
+  transition: all ease-in-out 0.25s;
+}
+
+.container > .info > .current > .close:hover {
+  background: #111111;
+}
+
+/* CURRENT MOVEMENTS */
+
+.container > .info > .current > .movements {
+  width: 280px;
+  height: 180px;
+  display: grid;
+  grid-gap: 4px;
+  padding: 5px 10px;
+}
+
+.container > .info > .current > .movements > .move {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #bfbfbf;
+  font-family: 'Roboto', sans-serif;
+  background: #0f0f0f;
+}
+
+/* CURRENT ABILITY */
+
+.container > .info > .current > .ability {
+  padding: 10px 20px;
+  width: 260px;
+  height: 120px;
+  font-size: 11px;
+  color: #bfbfbf;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+}
+
+.container > .info > .current > .ability > .name {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+/* HELPERS */
+
+.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
