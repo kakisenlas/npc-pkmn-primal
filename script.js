@@ -73,9 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // --------------------------------
 
       const currentClose = current.querySelector('#current-pokemon > .close');
-      currentClose.addEventListener('click', () =>
-        current.classList.remove('active')
-      );
+      currentClose.addEventListener('click', () => {
+        current.classList.remove('active');
+
+        pkmns.forEach((p) => p.classList.remove('active'));
+      });
     });
   });
 });
