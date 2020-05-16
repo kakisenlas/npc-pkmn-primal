@@ -75,6 +75,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all ease-in-out 0.25s;
+  z-index: 200;
 }
 
 .npc-container > .info .description::-webkit-scrollbar,
